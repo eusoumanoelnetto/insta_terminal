@@ -1,0 +1,9 @@
+[project]
+name = "insta-terminal"
+version = "0.1.0"
+description = "Consulta perfis públicos do Instagram pelo terminal"
+authors = [{name = "Manoel Netto", email = "teu@email.com"}]
+dependencies = ["requests", "rich"]
+
+[project.scripts]
+insta-terminal = "insta_terminal:run"
