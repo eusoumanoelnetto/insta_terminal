@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner.png" alt="Insta Terminal Banner" />
+  <img src="assets/banner.png" alt="Insta Terminal Banner" />
 </p>
 
 ![Insta Terminal](https://img.shields.io/badge/InstaTerminal-BlackMirror%20Mode-000000?style=for-the-badge&logo=python&logoColor=white)
