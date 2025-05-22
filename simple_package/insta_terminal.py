@@ -1,8 +1,24 @@
 import instaloader
+import sys
 import time
-from colorama import init, Fore
+import os
+from colorama import Fore, init
+import msvcrt  # Funciona no Windows
 
 init(autoreset=True)
+
+def banner():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(Fore.GREEN + """
+ ██████╗ ██████╗ ███████╗██╗     ██╗  ██╗ ██████╗ 
+██╔════╝██╔═══██╗██╔════╝██║     ██║  ██║██╔═══██╗
+██║     ██║   ██║█████╗  ██║     ███████║██║   ██║
+██║     ██║   ██║██╔══╝  ██║     ██╔══██║██║   ██║
+╚██████╗╚██████╔╝███████╗███████╗██║  ██║╚██████╔╝
+ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ 
+🚀 TERMINAL DE BUSCA BLACK MIRROR V2 - MODE HACKER 🚀
+    """)
+
 
 def hacker_effect(text, delay=0.05):
     for char in text:
@@ -28,16 +44,16 @@ def buscar_dados(username):
         print("==============================\n")
 
         if profile.is_private:
-            hacker_effect(f"{Fore.RED}🚫 ACESSO NEGADO! Este perfil é PRIVADO.\n⚠️ Download de postagens indisponível sem acesso autorizado.\n")
+            hacker_effect(f"{Fore.RED}🚫 ACESSO NEGADO! Este perfil é PRIVADO.\n⚠️ Dados limitados sem acesso autorizado.\n")
         else:
-            hacker_effect(f"{Fore.GREEN}✔️ Perfil público detectado! Iniciando download das postagens...\n")
-            loader.download_profile(username, profile_pic=True, posts=True, stories=False)
-            hacker_effect(f"{Fore.GREEN}✅ Download concluído com sucesso! 🗂️\n")
+            hacker_effect(f"{Fore.GREEN}✔️ Perfil público detectado!\n")
+            hacker_effect(f"{Fore.GREEN}✅ Dados coletados com sucesso! 🗂️\n")
 
     except Exception as e:
         hacker_effect(f"{Fore.RED}❌ Erro: {e}")
 
 def main():
+    banner()  # Agora exibe o banner na inicialização
     print(Fore.GREEN + "\n🚀 INICIANDO O TERMINAL BLACK MIRROR 🚀\n")
     user = input(Fore.YELLOW + "Digite o @ (sem o @): ").strip()
     buscar_dados(user)
